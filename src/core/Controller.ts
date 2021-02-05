@@ -7,20 +7,20 @@ type ResponseBody = {
 };
 
 class Controller {
-  private response: Response;
-  private request: Request;
+  protected response: Response;
+  protected request: Request;
 
   constructor(req: Request, res: Response) {
     this.response = res;
     this.request = req;
   }
 
-  success(data: {}, message: string = "success", statusCode: number = 200) {
+  protected success(data: {}, message: string = "success", statusCode: number = 200) {
     const obj: ResponseBody = { success: true, message, data };
     this.response.status(statusCode).json(obj);
   }
 
-  error(data: {}, message: string = "success", statusCode: number = 500) {
+  protected error(data: {}, message: string = "success", statusCode: number = 500) {
     const obj: ResponseBody = { success: false, message, data };
     this.response.status(statusCode).json(obj);
   }

@@ -7,7 +7,7 @@ class Route {
     return [this.get("/", (req, res) => new HomeController(req, res).index())];
   }
 
-  get(path: string, handler: (req: Request, res: Response) => void) {
+  private get(path: string, handler: (req: Request, res: Response) => void) {
     return router.get(path, handler);
   }
 }
