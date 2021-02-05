@@ -16,6 +16,16 @@
   ```
 - Server listening on `http://127.0.0.1:4000`
 
+## Development
+- Watch build
+  ```bash
+  > tsc --watch
+  ```
+- Run server
+  ```bash
+  > nodemon dist/server
+  ```
+
 ## Heroku Deploy
 
 - Create app
